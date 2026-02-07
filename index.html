@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine Surprise 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #dff3ff;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      width: 420px;
+      padding: 30px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #b30047;
+      font-size: 30px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 25px;
+      margin: 15px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background-color: #aaa;
+      color: white;
+      position: absolute;
+    }
+
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 16px;
+      animation: float 6s infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); }
+      100% { transform: translateY(-10vh); }
+    }
+  </style>
+
+  <script>
+    function moveNo() {
+      const x = Math.random() * 300;
+      const y = Math.random() * 200;
+      document.getElementById("no").style.left = x + "px";
+      document.getElementById("no").style.top = y + "px";
+    }
+
+    function yesClicked() {
+  document.body.innerHTML = `
+    <div class="card">
+      <h1>I LOVE YOU ❤️</h1>
+
+      <p style="font-size:18px;">
+        You are my favorite person, my best friend, my home, my peace, my sunshine <br>
+        my safe place and my forever 💕
+      </p>
+
+      <p style="font-size:14px; color:#777; margin-top:-5px;">
+        (No is no longer an option 😉❤️)
+      </p>
+
+      <img src="https://github.com/Mansi152921/Pho/blob/main/latest_slone.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+          <img src="https://github.com/Mansi152921/Pho/blob/main/alone.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+          <img src="https://github.com/Mansi152921/Pho/blob/main/WhatsApp%20Image%202026-02-07%20at%2012.06.00%20PM.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+          <img src="https://github.com/Mansi152921/Pho/blob/main/WhatsApp%20Image%202026-02-07%20at%2012.06.04%20PM.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+          <img src="https://github.com/Mansi152921/Pho/blob/main/WhatsApp%20Image%202026-02-07%20at%2012.06.11%20PM.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+          <img src="https://github.com/Mansi152921/Pho/blob/main/WhatsApp%20Image%202026-02-07%20at%2012.06.15%20PM.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+          <img src="https://github.com/Mansi152921/Pho/blob/main/WhatsApp%20Image%202026-02-07%20at%2012.06.17%20PM.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+          <img src="https://github.com/Mansi152921/Pho/blob/main/WhatsApp%20Image%202026-02-07%20at%2012.06.24%20PM.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+          <img src="https://github.com/Mansi152921/Pho/blob/main/WhatsApp%20Image%202026-02-07%20at%2012.06.41%20PM.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+          <img src="https://github.com/Mansi152921/Pho/blob/main/WhatsApp%20Image%202026-02-07%20at%2012.06.39%20PM.jpeg?raw=true" width="220" style="border-radius:20px; margin:10px;">
+
+      <p style="font-size:18px;">Forever us 💖</p>
+    </div>
+  `;
+}
+
+
+    function createHearts() {
+      for (let i = 0; i < 15; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+      }
+    }
+
+    window.onload = createHearts;
+  </script>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Will you be my Valentine 💌<br>and mine forever?</h1>
+    <button id="yes" onclick="yesClicked()">Yes 💖</button>
+    <button id="no" onmouseover="moveNo()">No 😜</button>
+  </div>
+</body>
+</html>
+""")
